@@ -68,8 +68,8 @@ def predit(img_path,model,output_path,img_size=img_size):
                     predit_pic[h*overlap:h*overlap+img_size,w*overlap:w*overlap+img_size,-12:] += output[w][0]
 
     predit_pic = predit_pic/num_compute
-    predit_pic[predit_pic>0.59]=1
-    predit_pic[predit_pic<0.59]=0  
+    predit_pic[predit_pic>0.6]=1
+    predit_pic[predit_pic<0.6]=0  
     predit_pic = predit_pic.astype(np.float64)
     print(predit_pic.shape)
 
